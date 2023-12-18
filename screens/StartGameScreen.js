@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Alert, StyleSheet, TextInput, View, Text } from "react-native";
-import PrimaryButton from "../components/ui/PrimaryButton";
-import Colors from "../constants/colors";
-import Title from "../components/ui/Title";
+import { Alert, Dimensions, StyleSheet, TextInput, View } from "react-native";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
+import PrimaryButton from "../components/ui/PrimaryButton";
+import Title from "../components/ui/Title";
+import Colors from "../constants/colors";
 
 const StartGameScreen = ({ onPickNumber }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
@@ -60,10 +60,12 @@ const StartGameScreen = ({ onPickNumber }) => {
 
 export default StartGameScreen;
 
+const dimensionHeight = Dimensions.get("window").height;
+
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    marginTop: 100,
+    marginTop: dimensionHeight < 400 ? 30 : 100,
     alignItems: "center",
   },
 
