@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 
 const Title = ({ children }) => {
   return (
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 24,
     textAlign: "center",
-    borderWidth: 2,
+    // borderWidth: Platform.OS === "android" ? 2 : 0,
+    // borderWidth: Platform.select({ ios: 0, android: 2 }),
     borderColor: "white",
     padding: 12,
   },
